@@ -49,13 +49,13 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
-  const lang = "en"; //default is english
+  const lang = "fr"; // default is French
   return (
     <html lang={lang}>
       <head>
         {/* Google Analytics */}
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-GZXDTT2CFT"
+          src="https://www.googletagmanager.com/gtag/js?id=G-N7VZ5JBTX2"
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
@@ -63,26 +63,25 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-GZXDTT2CFT', {
-              page_path: window.location.pathname,
-            });
+            gtag('config', 'G-N7VZ5JBTX2');
           `}
         </Script>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      > <TranslationProvider> 
-        <div className="hidden md:flex">
-          <BackgroundOverlay />
-        </div>
-        <main className="">
+      >
+        <TranslationProvider> 
           <div className="hidden md:flex">
-            <FloatingBeeCursor />
+            <BackgroundOverlay />
           </div>
-          {children}
-        </main>
-        <Footer />
-      </TranslationProvider>
+          <main className="">
+            <div className="hidden md:flex">
+              <FloatingBeeCursor />
+            </div>
+            {children}
+          </main>
+          <Footer />
+        </TranslationProvider>
       </body>
     </html>
   );
