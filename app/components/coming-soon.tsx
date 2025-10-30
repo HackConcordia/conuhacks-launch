@@ -24,14 +24,14 @@ export default function ComingSoonPage() {
 
   useEffect(() => {
     // Launch party date: Friday, November 7 at 5:00 PM Montréal time
-    const launchDate = new Date("2025-11-07T17:00:00"); 
+    const launchDate = new Date("2025-11-07T17:00:00");
     const timer = setInterval(() => {
       const now = new Date()
       const difference = launchDate.getTime() - now.getTime()
 
       if (difference <= 0) {
         clearInterval(timer)
-        setCountdown({ days:0, hours:0, minutes:0, seconds:0 })
+        setCountdown({ days: 0, hours: 0, minutes: 0, seconds: 0 })
         return
       }
 
@@ -65,13 +65,14 @@ export default function ComingSoonPage() {
               <span className="text-5xl md:text-7xl font-bold text-yellow-400">{value < 10 ? `0${value}` : value}</span>
               <span className="text-lg text-gray-400 capitalize">
                 {eventTranslations.time[unit as keyof typeof eventTranslations.time]}
-                </span>
+              </span>
             </div>
           ))}
         </div>
 
-        <a href="https://luma.com/rusmcsdo" target="_blank"
-                            rel="noopener noreferrer" className="inline-block px-6 py-3 text-white bg-yellow-500 rounded hover:bg-yellow-600">
+        <a href="https://luma.com/event/evt-PEgQABsw5M8OQ2C?utm_source=conuhacksio"
+          target="_blank"
+          rel="noopener noreferrer" className="inline-block px-6 py-3 text-white bg-yellow-500 rounded hover:bg-yellow-600">
           {eventTranslations.buttonText}
         </a>
       </div>
