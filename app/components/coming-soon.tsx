@@ -5,6 +5,9 @@ import { getEventText } from "../data/event.data";
 import { useTranslation } from "../i18n/TranslationContext";
 import en from "../locales/en";
 import fr from "../locales/fr";
+import Link from "next/link";
+import Image from "next/image";
+import MLH_Logo_White from "@/public/mlh-trust-badge-white.svg";
 
 export default function ComingSoonPage() {
   const [countdown, setCountdown] = useState({
@@ -53,11 +56,11 @@ export default function ComingSoonPage() {
           <span className="text-yellow-400">{eventTranslations.title}</span> - {eventTranslations.subtitle} ⭐️
         </h1>
 
-        <p className="text-lg text-gray-300 max-w-3xl mx-auto mb-0">
+        <p className="text-sm lg:text-lg text-gray-300 max-w-3xl mx-auto mb-0">
           {eventTranslations.description}
         </p>
 
-        <div className="grid grid-cols-4 gap-4 max-w-lg mx-auto mt-4">
+        <div className="grid grid-cols-4 gap-4 max-w-lg mx-auto my-4">
           {Object.entries(countdown).map(([unit, value]) => (
             <div key={unit} className="
               p-4 flex flex-col items-center justify-center
@@ -72,10 +75,17 @@ export default function ComingSoonPage() {
 
         <a href="https://luma.com/event/evt-PEgQABsw5M8OQ2C?utm_source=conuhacksio"
           target="_blank"
-          rel="noopener noreferrer" className="inline-block px-6 py-3 text-white bg-yellow-500 rounded hover:bg-yellow-600">
+          rel="noopener noreferrer" className="text-sm lg:text-base inline-block px-6 py-3 text-white bg-yellow-500 rounded hover:bg-yellow-600">
           {eventTranslations.buttonText}
         </a>
       </div>
+      <Link href={"https://mlh.io/"} target="_blank">
+            <Image
+              src={MLH_Logo_White}
+              alt={"MLH Badge"}
+              className="absolute w-[55px] right-2 md:w-[55px] xl:w-[70px] lg:right-18 top-0"
+            />
+          </Link>
     </div>
   )
 }
