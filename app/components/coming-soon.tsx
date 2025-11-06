@@ -35,6 +35,7 @@ export default function ComingSoonPage() {
       if (difference <= 0) {
         clearInterval(timer)
         setCountdown({ days: 0, hours: 0, minutes: 0, seconds: 0 })
+        window.location.reload()
         return
       }
 
