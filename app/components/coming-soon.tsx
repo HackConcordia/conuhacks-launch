@@ -27,7 +27,7 @@ export default function ComingSoonPage() {
 
   useEffect(() => {
     // Launch party date: Friday, November 7 at 5:00 PM Montréal time
-    const launchDate = new Date("2025-11-07T17:45:00");
+    const launchDate = new Date("2025-11-07T16:52:00");
     const timer = setInterval(() => {
       const now = new Date()
       const difference = launchDate.getTime() - now.getTime()
